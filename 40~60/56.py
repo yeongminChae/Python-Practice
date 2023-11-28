@@ -2,18 +2,11 @@ S = int(input())
 
 
 def func(S):
-    li = []
-    i = 0
-    n = 0
-    m = ((S + 1) - i)
+    a = 0
+    for i in range(1, S+1):
+        a += i
 
-    while i != S // 2:
-        n += i + m
-        li.append(i)
-        li.append(m)
-        i += 1
-
-    return len(li)
+    return a
 
 
 print(func(S))
