@@ -7,4 +7,4 @@ for _ in range(T):
         if distance < 0:
             distance += 26
         distances_array.append(distance)
-    print(f"Distances: {' '.join(map(str, distances))}")
+    print(f"Distances: {' '.join(map(str, distances_array))}")
