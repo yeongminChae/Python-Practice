@@ -23,3 +23,6 @@ def solution(numer1, denom1, numer2, denom2):
     answer.append(m // y)
     
     return answer
+
+# 1. 최소공배수 = 두 수의 곱 / 최대공약수 
+# 2. 기약분수로 만들기 위해서는, 분모와 분자 각각을 분모,분자 최대공약수로 나누어 줘야 함.
