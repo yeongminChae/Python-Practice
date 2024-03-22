@@ -1,9 +1,16 @@
 import math
 
+# 최대공약수 구하기 방법 1. 내장 함수
 def common_multiple(a, b) :
     n = math.gcd(a, b) # 최대공약수
     
     return (a * b) // n
+
+# 최대공약수 구하기 방법 2. 유클리드 호제법
+def common_multiple2(a, b) :
+    while b > 0 :
+        a, b = b, a % b
+        return a
 
 def solution(numer1, denom1, numer2, denom2):
     answer = []
