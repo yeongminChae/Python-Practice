@@ -1,5 +1,4 @@
 def solution(n):
-    answer = 0
-    for i in str(n) :
-        answer += int(i)
+    answer = sum(list(map(int, str(n))))
+        
     return answer
