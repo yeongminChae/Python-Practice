@@ -1,8 +1,5 @@
 def solution(numbers):
-    answer = []
-    for i in range(0, len(numbers)) :
-        for j in range(i + 1, len(numbers)) :
-            answer.append(numbers[i] * numbers[j])
+    new_li = sorted(numbers, reverse=True)
                 
                 
-    return max(answer)
+    return max(new_li[0] * new_li[1] , new_li[-1] * new_li[-2])
