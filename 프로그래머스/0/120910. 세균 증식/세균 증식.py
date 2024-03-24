@@ -3,3 +3,9 @@ def solution(n, t):
     for i in range(1, t + 1) :
         answer *= 2
     return answer
+
+def 비트연산자(n, t):
+    answer = n << t
+    return answer
+
+    
