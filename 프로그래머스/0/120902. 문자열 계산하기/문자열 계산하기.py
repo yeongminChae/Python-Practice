@@ -1,15 +1,6 @@
 def solution(my_string):
-    new_li = my_string.split()
-    answer = int(new_li[0])
-    
-    for i in range(1, len(new_li) - 1, 2):
-        operator = new_li[i]
-        new_num = int(new_li[i + 1])
-                
-        if operator == '+' :
-            answer += new_num
-        else :
-            answer -= new_num        
-        
-    return answer
+# ' + '와 '+'의 차이를 이해하는 것이 중요합니다. 전자는 공백을 포함한 분리 기준이고, 후자는 공백 없이 연산자만을 분리 기준으로 삼습니다
+
+    new_li = my_string.replace(' - ', " + -").split(' + ')
+    return sum(list(map(lambda x: int(x), new_li)))
     
