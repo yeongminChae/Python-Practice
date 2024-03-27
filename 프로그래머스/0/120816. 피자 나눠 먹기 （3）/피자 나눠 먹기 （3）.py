@@ -1,3 +1,4 @@
 def solution(slice, n):
-    return ((n - 1) // slice) + 1 
+    x, y = divmod(n, slice)
+    return x + int(y != 0) 
         
