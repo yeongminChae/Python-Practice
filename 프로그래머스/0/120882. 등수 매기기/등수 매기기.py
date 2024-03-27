@@ -1,11 +1,15 @@
 def solution(score):
-    li = [sum(i) / len(i) for i in score]
+    aver = [sum(j) for i, j in enumerate(score)]
+    sorted_aver = sorted(aver, reverse=True)
     
-    answer = [1] * len(score)
+    dict_avr = {}
     
-    for i in range(len(score)) :
-        for j in range(len(score)) :
-            if li[i] < li[j] :
-                answer[i] += 1
-            
+    for i, j in enumerate(sorted_aver) :
+        if j not in dict_avr:
+            dict_avr[j] = i + 1 
+    
+    print(dict_avr)
+    
+    answer = [dict_avr[i] for i in aver]
+    
     return answer
