@@ -1,22 +1,10 @@
 def solution(ineq, eq, n, m):
-    if ineq == '>' and eq == '=':
-        if n >= m :
-            return 1
-        else :
-            return 0
-    elif ineq == '>' and eq != '=':
-        if n > m :
-            return 1
-        else :
-            return 0
-    if ineq == '<' and eq == '=':
-        if n <= m :
-            return 1
-        else :
-            return 0
-    elif ineq == '<' and eq != '=':
-        if n < m :
-            return 1
-        else :
-            return 0
-    
+    answer = 0
+    if n > m and ineq ==">":
+        answer = 1
+    elif n < m and ineq == "<":
+        answer = 1
+    elif n == m and eq == "=":
+        answer = 1
+
+    return answer
