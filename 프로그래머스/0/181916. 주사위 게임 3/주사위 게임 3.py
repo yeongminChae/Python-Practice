@@ -22,11 +22,8 @@ def func_3(a, arr) :
     return a
 
 def func_2(arr, x) :
-    p, q = 0, 0
-    if arr.count(x) == 2 :
-        return func_2_22(arr) 
-    else :
-        return func_2_31(arr, x)
+    a = func_2_22(arr)  if arr.count(x) == 2 else func_2_31(arr, x)
+    return a
         
 def func_2_22(arr) :       
     new_li = list(set(arr))
@@ -34,12 +31,15 @@ def func_2_22(arr) :
 
 def func_2_31(arr, x) :
     p, q = 0, 0
+    temp = pq_maker(arr,x)
     if arr.count(x) == 1 :
-        q = x
-        p = next(i for i in arr if i != x)
+        p, q = temp[1], temp[0]
     elif arr.count(x) == 3 :
-        p = x
-        q = next(i for i in arr if i != x)
-    return (10 * p + q) ** 2
-            
+        p, q = temp[0], temp[1]
         
+    return (10 * p + q) ** 2
+
+def pq_maker(arr, x) :
+    li = [x, next(i for i in arr if i != x)]
+    return li
+            
