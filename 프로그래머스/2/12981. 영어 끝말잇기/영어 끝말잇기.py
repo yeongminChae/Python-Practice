@@ -1,13 +1,12 @@
 def solution(n, words):
-    temp = []
+    used_words = set()
+    last_char = words[0][0]
+    
     for i, j in enumerate(words) :
-        if j not in temp : temp.append(j)
-        else : 
-            return [ i % n + 1, i // n + 1] 
+        if j[0] != last_char or j in used_words :
+            return [(i % n) + 1, (i // n) + 1]
         
-        if i + 1 != len(words) :
-            if j[-1] != words[i + 1][0] : 
-                return [ (i + 1) % n + 1, (i + 1) // n + 1] 
-            
+        used_words.add(j)
+        last_char = j[-1]
     
     return [0, 0]
